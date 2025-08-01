@@ -2,7 +2,7 @@
 
 # Maven image
 
-FROM maven:3.8.3-openjdk-17 AS builder 
+FROM maven:3.9.11-amazoncorretto-24-al2023 AS builder 
 
 # Set working directory
 
@@ -26,7 +26,7 @@ RUN mvn clean install -DskipTests=true
 
 # Import small size java image
 
-FROM openjdk:17-alpine
+FROM openjdk:26-oraclelinux8
 
 WORKDIR /app 
 
